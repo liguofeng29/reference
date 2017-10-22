@@ -44,6 +44,11 @@ https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html)
     - mvn help:effective-pom
     - mvn help:active-profiles
 - mvn cobertura:cobertura               // coverage
+- mvn dependency
+    - mvn dependency:tree
+    - mvn dependency:resolve
+    - mvn dependency:analyze
+
 
 ## setting.xml
 - localRepository
@@ -52,24 +57,19 @@ https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html)
 - repositories/repository               // ライブラリを取得するためのリモートリポジトリ
 - pluginRepositories/pluginRepository   // プラグインを取得するためのリモートリポジトリ
 - distributionManagement/repository     // プロジェクトを配布するためのリモートリポジトリ
+- dependencies                          // 依存関係
+- dependencyManagement/dependencies     // 子POMに継承させる
 - build/pluginManagement                // 子プロジェクトに提供するプラグイン
 - build/plugin                          // プロジェクトで使用するプラグイン 
 - profiles                              // 個性化、指定要素上書き
     - can user profiles.xml with -s
 
-## other
-- maven-model-builder-3.5.0.jar
-    - pom-4.0.0.xml // super pom.xml 
     
 ## profiles
 - pom.xml内
 - 外部profile                        // !!! maven3からサポートしない？
 - setting.xml 
-- 多環境例：
-    - mvn clean package -s settings.xml    //environment.type=devはデフォルト有効   
-  or  
-  mvn clean package -s settings.xml -Denvironment.type=dev
-    - mvn clean package -s settings.xml -Denvironment.type=prod
+- 多環境例：demo-1
 - pom.xml以外で定義して有効になるもの
     - repositories
     - pluginRepositories
@@ -83,7 +83,8 @@ https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html)
 4. system属性
 5. ユーザ属性
 
-- 下記追加後、`mvn validate`
+- maven属性をすべて表示してみる。  
+下記追加後、`mvn validate`
 ```xml
 <!-- 環境変数表示のため追加した -->
 <plugin>
@@ -106,4 +107,34 @@ https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html)
 </plugin>
 ```
 
+## other
+- super pom.xml
+pom-4.0.0.xml in maven-model-builder-3.5.0.jar
+- 推移的な依存関係
+- pom依存関係 
+```xml
+<dependency>
+<tpye>pom</type>
+</dependency>
+```
 
+- optional
+```xml
+<dependency>
+<optional>true</optional>
+</dependency>
+```
+
+- version範囲指定
+```xml
+<dependency>
+<version>[3.8,4.0)</version>
+</dependency>
+```
+
+- scope : provided : jarにいれない。例：servletAPI
+```xml
+<dependency>
+<scope>provided</scope>
+</dependency>
+```
