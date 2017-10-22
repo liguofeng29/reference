@@ -1,0 +1,11 @@
+##ignore 
+target/
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### log ###
+*.log*
