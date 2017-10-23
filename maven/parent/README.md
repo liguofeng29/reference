@@ -1,4 +1,5 @@
 # parent pom
+これは親POMのdemoです。
 
 ## run
 mvn clean package

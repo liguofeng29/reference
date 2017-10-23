@@ -107,7 +107,7 @@ https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html)
 </plugin>
 ```
 
-## other
+## tip
 - super pom.xml
 pom-4.0.0.xml in maven-model-builder-3.5.0.jar
 - 推移的な依存関係
