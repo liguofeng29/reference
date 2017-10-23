@@ -15,6 +15,7 @@
 |Ctrl + g | 行ジャンプ |
 |Ctrl + b | 宣言に移動 | 
 |Ctrl + Alt + b | 実装に移動 |
+|Ctrl + Alt + t | 囲む |
 |Ctrl + F12 | ファイル構造表示 |
 |Ctrl + Numpad+/Numpad- | コードブロック展開／折畳む |
 |Ctrl + ALt + Numpad+/Numpad- | すべて展開／折畳む |
@@ -23,4 +24,4 @@
 |Alt + Enter | quick fix,intention actions |
 |Alt + F7    | 使用箇所検索 | 
 |Alt + Ctrl + F7 | 使用箇所表示 |  
-
+|Shift + F6 | 名前変更 |
