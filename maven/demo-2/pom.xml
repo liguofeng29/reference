@@ -2,11 +2,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <!--<groupId>${groupId}</groupId>-->
-    <artifactId>demo1</artifactId>
+    <artifactId>demo2</artifactId>
     <packaging>jar</packaging>
     <version>1.0.0</version>
 
-    <name>demo-1</name>
+    <name>demo-2</name>
     <url>http://maven.apache.org</url>
 
     <parent>
@@ -16,31 +16,21 @@
         <relativePath>../parent</relativePath>
     </parent>
 
-    <developers>
-        <developer>
-            <name>hoge</name>
-            <email>hoge@gmail.com</email>
-            <roles>
-                <role>開発者</role>
-            </roles>
-            <timezone>+8</timezone>
-        </developer>
-        <developer>
-            <name>fuga</name>
-            <email>fuga@gmail.com</email>
-            <timezone>+0</timezone>
-        </developer>
-    </developers>
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-
             <!-- inherit form parent -->
             <!--<version>4.11</version>-->
             <!--<scope>test</scope>-->
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-beans -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>4.3.12.RELEASE</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -75,41 +65,4 @@
             </plugin>
         </plugins>
     </build>
-
-    <profiles>
-        <profile>
-            <!-- 有効になる条件 -->
-            <activation>
-                <property>
-                    <name>environment.type</name>
-                    <value>dev</value>
-                </property>
-            </activation>
-
-            <id>dev</id>
-            <properties>
-                <jdbc.url>jdbc:mysql://localhost:3306/dev</jdbc.url>
-                <jdbc.username>dev-user</jdbc.username>
-                <jdbc.password>dev-password</jdbc.password>
-            </properties>
-        </profile>
-        <profile>
-            <!-- 有効になる条件 -->
-            <activation>
-                <property>
-                    <name>environment.type</name>
-                    <value>prod</value>
-                </property>
-            </activation>
-
-            <id>prod</id>
-            <properties>
-                <jdbc.url>jdbc:mysql://localhost:3306/pord</jdbc.url>
-                <jdbc.username>prod-user</jdbc.username>
-                <!-- ここのパスワードは setting.xmlのパスワードに置き換える -->
-                <jdbc.password>prod-temp-password</jdbc.password>
-            </properties>
-        </profile>
-
-    </profiles>
 </project>

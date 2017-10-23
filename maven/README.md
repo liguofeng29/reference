@@ -138,3 +138,7 @@ pom-4.0.0.xml in maven-model-builder-3.5.0.jar
 <scope>provided</scope>
 </dependency>
 ```
+
+- about assembly plugin : demo2
+
+- about `mvn site` : demo3
