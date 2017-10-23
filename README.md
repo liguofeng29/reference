@@ -1,3 +1,4 @@
 # reference
 - maven
 - git
+- IntelliJ
