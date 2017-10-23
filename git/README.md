@@ -1,42 +1,35 @@
 # about git
 
-## cmd
-```
--------------------
-git ls-files // indexのファイル
+## cmd (整理中)
+- git ls-files // indexのファイル
 
--------------------
-git cat-file -t xx
-git cat-file -p xx
-git cat-file -p ブランチ名:ファイルパス名
 
-// 一度閲覧してから
-git cat-file -p mybranch:dir/file.txt
-// リダイレクトしてワーキングツリーに上書き 
-git cat-file -p mybranch:dir/file.txt > dir/file.txt
--------------------
-git rev-list HEAD
-git rev-list HEAD -n 2
+- git cat-file -t xx
+- git cat-file -p xx
+- git cat-file -p ブランチ名:ファイルパス名
 
-git rev-parse HEAD
-git rev-parse HEAD~1
-git rev-parse 1838ad4786...02cc4e713a
-git rev-parse --all
-git rev-parse --remotes
--------------------
+- git cat-file -p mybranch:dir/file.txt　// 一度閲覧してから
+- git cat-file -p mybranch:dir/file.txt > dir/file.txt　// リダイレクトしてワーキングツリーに上書き
 
-git log --oneline --decorate
+- git rev-list HEAD
+- git rev-list HEAD -n 2
 
-------------------
-git ls-remote --tags
-git ls-remote origin
-------------------------
-git show-ref    // local 引用を表示
-git show-ref  -r
+- git rev-parse HEAD
+- git rev-parse HEAD~1
+- git rev-parse 1838ad4786...02cc4e713a
+- git rev-parse --all
+- git rev-parse --remotes
 
--- remoteを変更する
-git remote set-url origin git@github.com:xxx/xxx.git
-```
+- git log --oneline --decorate
+
+- git ls-remote --tags
+- git ls-remote origin
+
+- git show-ref    // local 引用を表示
+- git show-ref  -r
+
+- git remote set-url origin git@github.com:xxx/xxx.git // remote変更
+
 
 ## rebase -i
 |コマンド   |内容       | 
@@ -48,3 +41,5 @@ git remote set-url origin git@github.com:xxx/xxx.git
 |(f)fixup	|直前のpickを指定したコミットに統合。メッセージは破棄。|
 
 
+## wincred (パスワード保存)
+git config --global credential.helper wincred
