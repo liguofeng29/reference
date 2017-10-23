@@ -1,6 +1,7 @@
 # about git
 
 ## cmd
+```
 -------------------
 git ls-files // indexのファイル
 
@@ -33,6 +34,9 @@ git ls-remote origin
 git show-ref    // local 引用を表示
 git show-ref  -r
 
+-- remoteを変更する
+git remote set-url origin git@github.com:xxx/xxx.git
+```
 
 ## rebase -i
 |コマンド   |内容       | 
