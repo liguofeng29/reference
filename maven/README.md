@@ -42,6 +42,7 @@ https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html)
     - mvn help:describe -Dplugin=help
     - mvn help:describe -Dplugin=eclipse -Dfull
     - mvn help:effective-pom
+    - mvn help:effective-settings
     - mvn help:active-profiles
 - mvn cobertura:cobertura               // coverage
 - mvn dependency
