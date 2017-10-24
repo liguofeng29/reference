@@ -1,6 +1,130 @@
 # about git
 
 ## cmd (整理中)
+
+## git --version
+
+## git init
+- git init demo
+
+
+## git config
+- git config -e
+- git config --system user.name "write to /etc/gitconfig"
+- git config --global user.name "write to ~/.gitconfig"
+- git config --local user.name  "write to ~repo/.git/config"
+- git config --system alias.ci "commit -s"                         //  別名
+- git config --system|global|local --unset   // 削除
+
+## git status
+- git -p status
+- git status -s
+- git status -s -b
+
+## git diff          // workspace and stage
+- git diff HEAD      // workspace and HEAD
+- git diff --staged  // stage and .git
+- git diff --cached  // stage and .git
+- git diff -w 
+
+## git commit
+- git commit -m "initialized"
+- git commit --amend 
+- git commit --allow-empty -m "who does commit?" // 空コミット
+- git commit --amend --allow-empty --reset-author // authorリセット
+- git commit -a // !!!!!!! 使用禁止 !!!!!!!
+
+## git rev-parse
+- git rev-parse --show-toplevel // workspace絶対パス
+- git rev-parse --show-prefix   // workspace相対パス
+- git rev-parse --show-cdup // workspaceまでの深さ
+- git rev-parse --git-dir // .git位置
+- git rev-parse master | HEAD | refs/heads/master
+
+
+## git rev-list
+
+## git ls-remote origin
+
+## git log
+- git log --stat            // show file change
+- git log --pretty=oneline
+- git log --pretty=fuller
+- git log -1 HEAD | master | refs/heads/master
+- git log --pretty=raw --graph b3bfdae62
+
+
+## git ls-tree -l HEAD
+## git cat-file -p f58da9a
+## git cat-file -t f58da9a
+
+
+## git clean
+
+## git stash
+git stash list
+
+git stash save "message"
+
+git stash pop [--index]
+
+git stash apply [--index]
+
+git stash drop
+
+git stash clear
+
+
+
+##########################################
+## git reset  // .git/HEAD  like a cursor   
+##########################################
+
+1. refsを変更する !! HEADは変更されない
+2. 変更内容をindex tree, work treeへの反映を--mixed, --hardで制御する！！
+
+
+- git reset | git reset HEAD // HEADが指すIDでindexを更新する
+
+- git reset HEAD filename | git reset -- filename // HEADが指すIDのファイルでindex更新
+
+- git reset --hard master@{2}     // git reflog show master | head -5
+
+- git reset --hard HEAD^ // 
+
+
+###############################
+- git commit -amend
+
+- git reset --soft HEAD^
+- git commit -e -F .git/COMMIT_EDITMSG
+###############################
+
+
+
+##########################################
+## git checkout  // HEADが変わる
+##########################################
+
+## git checkout
+- git checkout [HEAD]                  // 差分概要
+
+- git checkout branch                 // HEAD更新、index, work更新
+- git checkout branch -- filename     // HEAD更新せず、index,work更新
+
+- git checkout [HEAD|branch|commit] -- filename
+
+- git checkout commit_id    // detached
+
+- git checkout -- filename  // index to work tree
+- git checkout .            // index to work tree all
+
+
+
+########## else
+
+
+
 - git ls-files // indexのファイル
 
 
