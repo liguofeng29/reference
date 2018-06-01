@@ -20,6 +20,7 @@
 |Ctrl + Numpad+/Numpad- | コードブロック展開／折畳む |
 |Ctrl + ALt + Numpad+/Numpad- | すべて展開／折畳む |
 |Ctrl + F12 | ファイル構造表示 |
+|Alt + q | メソッド定義表示  |
 |Alt + Inter | コード生成 |
 |Alt + Enter | quick fix,intention actions |
 |Alt + F7    | 使用箇所検索 | 
